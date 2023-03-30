@@ -8,6 +8,7 @@ import {
 
 import { COLORS } from "./constants/theme";
 import { useFonts } from "expo-font";
+import Map from "./screens/map/Map";
 
 
 
@@ -37,7 +38,7 @@ export default function App() {
   return (
     <View >
       <Text>Open up App.js to start working on your app!!!!</Text>
-     
+      <Map />
     </View>
   );
 }
