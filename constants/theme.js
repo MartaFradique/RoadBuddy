@@ -1,3 +1,17 @@
+
+export const COLORS = {
+  mainGreen: "#00C896",
+  separators: "#979797",
+ secondaryText: "#5A5A5A",
+  white: "#FFFFFF",
+  black: "#000000",
+  bgColor: "#F7F7F7",
+  gray: "#74858C",
+  
+
+  
+};
+
 export const FONTS = {
     extraBold: "InterExtraBold",
     bold: "InterBold",
@@ -58,15 +72,4 @@ export const SIZES = {
     extraLarge: 24,
 };
 
-  export const COLORS = {
-    mainGreen: "#00C896",
-    separators: "#979797",
-   secondaryText: "#5A5A5A",
-    white: "#FFFFFF",
-    black: "#000000",
-    bgColor: "#F7F7F7",
-    
-
-    
-  };
   
