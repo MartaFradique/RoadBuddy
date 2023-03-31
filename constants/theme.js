@@ -1,12 +1,19 @@
 
 export const COLORS = {
   mainGreen: "#00C896",
+  secondaryGreen:"#009378",
+  purple: "#1F1A2F",
+  bgColor: "#F7F7F7",
+  gas:"#002093",
+  points:"#DA572A",
+
   separators: "#979797",
  secondaryText: "#5A5A5A",
   white: "#FFFFFF",
   black: "#000000",
-  bgColor: "#F7F7F7",
+ 
   gray: "#74858C",
+ 
   
 
   

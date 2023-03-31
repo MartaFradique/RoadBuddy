@@ -9,6 +9,10 @@ import {
 import { COLORS } from "./constants/theme";
 import { useFonts } from "expo-font";
 import Map from "./screens/map/Map";
+import TabsNavigation from "./navigation/TabsNavigation";
+
+
+import { createStackNavigator } from '@react-navigation/stack';
 
 
 
@@ -24,6 +28,7 @@ const theme = {
 export default function App() {
 
 
+
   const [loaded] = useFonts({
     InterBold: require("./assets/fonts/Inter-Bold.ttf"),
     InterSemiBold: require("./assets/fonts/Inter-SemiBold.ttf"),
@@ -37,8 +42,13 @@ export default function App() {
   
   return (
     <View >
-      <Text>Open up App.js to start working on your app!!!!</Text>
-      <Map />
+       <NavigationContainer
+          theme={theme}
+          >
+          {/* <Text>Open up App.js to start working!!!!</Text>
+          <Map /> */}
+          <TabsNavigation />
+     </NavigationContainer>
     </View>
   );
 }
