@@ -77,6 +77,7 @@ export const SIZES = {
     medium: 16,
     large: 18,
     extraLarge: 24,
+    xxlarge: 60,
 };
 
   

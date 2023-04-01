@@ -5,9 +5,10 @@ const Tab = createBottomTabNavigator();
 import { View, Text, StyleSheet ,  Dimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
-import List from "../screens/List";
+import WelcomePage from "../screens/auth/WelcomePage";
 import Map from "./NavigationMap";
 import Profile from "./NavigationProfile";
+import List from "../screens/List";
 
 import { COLORS } from "../constants/theme";
 
@@ -18,7 +19,7 @@ const TabsNavigation = (props) => {
   // const hide = props.routename != "list" ; to use in the future for the pages that dont have the bottom bar 
 
   let icon = (route, color, focused) => {
-    if (route.name === "list") {
+    if (route.name === "List") {
       if (!focused) {
         return <IconSelected name="format-list-bulleted" size={24} />;
       } else {
@@ -26,7 +27,7 @@ const TabsNavigation = (props) => {
           <IconUnselected name="format-list-bulleted" size={24} /> 
         );
       }
-    } else if (route.name === "map") {
+    } else if (route.name === "Map") {
       if (!focused) {
         return <IconSelected name="location-on" size={24} />;
       } else {
@@ -34,7 +35,7 @@ const TabsNavigation = (props) => {
           <IconUnselected name="location-on" size={24} /> 
         );
       }
-    } else if (route.name === "profile") {
+    } else if (route.name === "Profile") {
       if (!focused) {
         return <IconSelected name="sports-motorsports" size={24} />;
       } else {
@@ -66,12 +67,15 @@ const TabsNavigation = (props) => {
             width: screenWidth 
           },
         })}
-        initialRouteName="map"
+        tabBarOptions={{
+          showLabel: false
+        }}
+        initialRouteName="List"
       >
       
-      <Tab.Screen name="list" component={List} />
-      <Tab.Screen name="map" component={Map} />
-      <Tab.Screen name="profile" component={Profile} />
+      <Tab.Screen name="List" component={List} />
+      <Tab.Screen name="Map" component={Map} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
 
 
