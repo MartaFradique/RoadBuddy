@@ -70,12 +70,13 @@ const TabsNavigation = (props) => {
         tabBarOptions={{
           showLabel: false
         }}
-        initialRouteName="List"
+        initialRouteName="Profile"
       >
       
       <Tab.Screen name="List" component={List} />
       <Tab.Screen name="Map" component={Map} />
       <Tab.Screen name="Profile" component={Profile} />
+     
     </Tab.Navigator>
 
 
