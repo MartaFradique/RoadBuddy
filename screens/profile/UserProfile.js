@@ -1,7 +1,8 @@
 import React from 'react'
 import { View, Text, Image } from 'react-native'
-import { COLORS, FONTS } from '../../constants/theme'
+import { COLORS, FONTS, SIZES } from '../../constants/theme'
 import  assets  from '../../constants/assets'
+import { RectangleButton } from '../../components/UI/Buttons'
 
 const userProfile = () => {
   return (
@@ -17,7 +18,26 @@ const userProfile = () => {
             <Text style={{ fontSize: 20, alignSelf: 'center', marginTop: 10, fontFamily: FONTS.regular,  marginTop: 17}}>@mauricinho</Text>
             <Text style={{ fontSize: 24, alignSelf: 'center', marginTop: 10, fontFamily: FONTS.bold, marginTop: 2}}>Mauricio Macri</Text>
           </View>
-        
+
+          <View style={{alignSelf:"center", marginTop: 32}}>
+          <RectangleButton
+            margin={SIZES.small}
+            fontSize={SIZES.medium}
+            fontFamily={FONTS.bold}
+            backgroundColor={COLORS.purple}
+            borderRadius={SIZES.small}
+            text={"Edit Profile"}
+            width={172}
+            height={35}
+            textColor={"#ffffff"}
+            justifyContent="center"
+            alignItems="center"
+
+        // handlePress={() => {}}
+          ></RectangleButton>
+
+          </View>
+         
         </View>
         
         

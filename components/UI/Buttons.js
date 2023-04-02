@@ -13,7 +13,7 @@ export const RectangleButton = ({
     return (
       <Pressable
       style={{
-        borderRadius: SIZES.small,
+      
         padding: SIZES.small,
         minWidth: 20,
         ...props,
