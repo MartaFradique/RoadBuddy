@@ -4,6 +4,7 @@ import { COLORS, FONTS, SIZES } from '../../constants/theme'
 import  assets  from '../../constants/assets'
 import { RectangleButton } from '../../components/UI/Buttons'
 import DriverInfo   from '../../components/userProfile/DriverInfo'
+import Permissions from '../../components/userProfile/Permissions'
 import { Ionicons } from '@expo/vector-icons'; 
 
 
@@ -51,13 +52,18 @@ const userProfile = () => {
          
             <Image source={assets.mapPin} style={{width: 23, height: 28}} />
             <Text style={{marginLeft:24, fontSize:SIZES.medium , fontFamily: FONTS.regular}} >Barcelos</Text> 
-        </View>
+          </View>
           <DriverInfo text={"Portugal"} iconName={"location-on"} />
           <DriverInfo text={"Akrapovic Yamaha YZF R6"} iconName={"sports-motorsports"} />
-        
+            
         </View>
+      <Text style={{marginLeft: '10%', marginBottom:'6%', marginTop:'2%', fontFamily: FONTS.bold, fontSize: 18}}>
+        Permissions
+      </Text>
+      <Permissions  text={"Share My Location"}/>
+      <Permissions text={"Receive Notifications"}/>
 
-      
+
       </View>
 
     </View>
