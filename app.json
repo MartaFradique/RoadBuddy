@@ -1,5 +1,14 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsImpl": "mapbox",
+          "RNMapboxMapsDownloadToken": "sk.ey...qg"
+        }
+      ]
+    ],
     "name": "RoadBuddy",
     "slug": "RoadBuddy",
     "version": "1.0.0",
@@ -23,6 +32,7 @@
         "backgroundColor": "#ffffff"
       }
     },
+    
     "web": {
       "favicon": "./assets/favicon.png"
     }
