@@ -1,23 +1,20 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import * as Mapbox from 'mapbox-gl';
-
-
-
+import Mapbox from '@rnmapbox/maps';
 
 Mapbox.setAccessToken('pk.eyJ1IjoibWFydGlzc2UiLCJhIjoiY2xmdjlvNWJrMDJhbjNocHZoZGRlejMzaCJ9.BBAqo1VGk-00bSPlJwCoxw');
 
-const Map = () => {
+const App = () => {
   return (
     <View style={styles.page}>
-    <View style={styles.container}>
-      <Mapbox.MapView style={styles.map} />
+      <View style={styles.container}>
+        <Mapbox.MapView style={styles.map} />
+      </View>
     </View>
-  </View>
   );
 }
 
-export default Map;
+export default App;
 
 const styles = StyleSheet.create({
   page: {
