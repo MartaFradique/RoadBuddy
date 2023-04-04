@@ -9,13 +9,13 @@ import EditUserProfile from "../screens/profile/EditUserProfile";
 const NavigationMap = () => {
   return (
     <Stack.Navigator
-      initialRouteName="UserProfile"
+      initialRouteName="EditUserProfile"
       screenOptions={{
         headerShown: false,
       }}
     >
         <Stack.Screen name="UserProfile" component={UserProfile} />
-        <Stack.Screen name="AddPoint" component={EditUserProfile} />
+        <Stack.Screen name="EditUserProfile" component={EditUserProfile} />
     </Stack.Navigator>
   )
 }

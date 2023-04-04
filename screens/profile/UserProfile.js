@@ -6,11 +6,14 @@ import { RectangleButton } from '../../components/UI/Buttons'
 import DriverInfo   from '../../components/userProfile/DriverInfo'
 import Permissions from '../../components/userProfile/Permissions'
 import { Ionicons } from '@expo/vector-icons'; 
+import { useNavigation } from "@react-navigation/native";
 
 
 import { MaterialIcons } from '@expo/vector-icons'; 
 
 const userProfile = () => {
+
+  const navigation = useNavigation();
   return (
     <View style={{flex: 1}}>
       <View style={{backgroundColor: COLORS.mainGreen, height: '20%', borderRadius: 10, margin: 8  }}>
@@ -21,11 +24,11 @@ const userProfile = () => {
 
 
           <View style={{}}>
-            <Text style={{ fontSize: 20, alignSelf: 'center', fontFamily: FONTS.regular,  marginTop: '8%'}}>@mauricinho</Text>
+            <Text style={{ fontSize: 20, alignSelf: 'center', fontFamily: FONTS.regular,  marginTop: 17}}>@mauricinho</Text>
             <Text style={{ fontSize: 24, alignSelf: 'center', fontFamily: FONTS.bold, marginTop: 2}}>Mauricio Macri</Text>
           </View>
 
-          <View style={{alignSelf:"center", marginTop: '10%', marginBottom:'8%'}}>
+          <View style={{alignSelf:"center", marginTop: 32, marginBottom:32}}>
           <RectangleButton
             margin={SIZES.small}
             fontSize={SIZES.medium}
@@ -39,7 +42,7 @@ const userProfile = () => {
             justifyContent="center"
             alignItems="center"
 
-        // handlePress={() => {}}
+            handlePress={() => navigation.navigate("EditUserProfile")}
           ></RectangleButton>
 
           </View>
@@ -50,7 +53,7 @@ const userProfile = () => {
           <DriverInfo text={"+356 915648592"} iconName={"local-phone"} />
           <View style={{ flexDirection:'row', marginLeft: '10%', marginBottom:'8%'}}>
          
-            <Image source={assets.mapPin} style={{width: 23, height: 28}} />
+            <Image source={assets.mapPin} style={{width: 20, height: 28}} />
             <Text style={{marginLeft:24, fontSize:SIZES.medium , fontFamily: FONTS.regular}} >Barcelos</Text> 
           </View>
           <DriverInfo text={"Portugal"} iconName={"location-on"} />

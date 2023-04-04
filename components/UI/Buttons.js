@@ -3,7 +3,7 @@ import {Pressable, Text} from 'react-native';
 import {SIZES} from '../../constants/theme';
 
 export const RectangleButton = ({
-  // handlePress,
+  handlePress,
   text,
   fontSize,
   fontFamily,
@@ -18,7 +18,7 @@ export const RectangleButton = ({
         minWidth: 20,
         ...props,
       }}
-      // onPress={handlePress}
+      onPress={handlePress}
     >
       <Text
         style={{

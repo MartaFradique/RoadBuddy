@@ -13,6 +13,9 @@ export const COLORS = {
   black: "#000000",
  
   gray: "#74858C",
+  mediumGray: "#89879B",
+  darkGray: "#89879B",
+
  
   
 
