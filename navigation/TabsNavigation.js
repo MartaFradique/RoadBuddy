@@ -24,7 +24,7 @@ const TabsNavigation = (props) => {
         return <IconSelected name="format-list-bulleted" size={24} />;
       } else {
         return (
-          <IconUnselected name="format-list-bulleted" size={24} /> 
+          <IconUnselected name="format-list-bulleted" size={24}  sizeBall={42} color={COLORS.mainGreen}  colorIcon={'white'}/> 
         );
       }
     } else if (route.name === "Map") {
@@ -32,7 +32,7 @@ const TabsNavigation = (props) => {
         return <IconSelected name="location-on" size={24} />;
       } else {
         return (
-          <IconUnselected name="location-on" size={24} /> 
+          <IconUnselected name="location-on" size={24}  sizeBall={42} color={COLORS.mainGreen} colorIcon={'white'}/> 
         );
       }
     } else if (route.name === "Profile") {
@@ -40,7 +40,7 @@ const TabsNavigation = (props) => {
         return <IconSelected name="sports-motorsports" size={24} />;
       } else {
         return (
-          <IconUnselected name="sports-motorsports" size={24}  /> 
+          <IconUnselected name="sports-motorsports" size={24} sizeBall={42} color={COLORS.mainGreen} colorIcon={'white'}  /> 
         );
       }
     }

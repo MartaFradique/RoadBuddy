@@ -9,23 +9,23 @@ export const IconSelected = ({ name, size, color }) => {
 
 };
 
-export const IconUnselected = ({ name, size, color }) => {
+export const IconUnselected = ({ name, size, sizeBall, color, colorIcon}) => {
     return (
      
 
         <View style={{ alignItems: "center", padding: 10 }}>
           <View
             style={{
-              width: 42,
-              height: 42,
+              width: sizeBall,
+              height: sizeBall,
               borderRadius: 50,
               overflow: "hidden",
-              backgroundColor: COLORS.mainGreen,
+              backgroundColor: color,
               alignItems: "center",
               justifyContent: "center",
             }}
           >
-            <MaterialIcons name={name} size={size} color="white" />
+            <MaterialIcons name={name} size={size} color={colorIcon} />
           </View>
     </View>
        
