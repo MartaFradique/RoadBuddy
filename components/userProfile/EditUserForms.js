@@ -5,121 +5,116 @@ import { RectangleButton } from '../UI/Buttons'
 import  assets  from '../../constants/assets';
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from '@expo/vector-icons'; 
+import InputTextUserForms from './InputTextUserForms';
+
+
+import { validateName, validateUsername, validateEmail, validatePhoneNumber, validateCity, validateCountry } from './ValidationUserForms';
 
 
 const EditUserForms = () => {
 
-    const navigation = useNavigation();
+  const navigation = useNavigation();
+
   const [name, setName] = useState('');
+  const [nameError, setNameError] = useState('');
+
+  const [username, setUsername] = useState('');
+  const [usernameError, setUsernameError] = useState('');
+
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [emailError, setEmailError] = useState('');
+
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [phoneNumberError, setPhoneNumberError] = useState('');
+
+  const [city, setCity] = useState('');
+  const [cityError, setCityError] = useState('');
+
+  const [country, setCountry] = useState('');
+  const [countryError, setCountryError] = useState('');
 
   const handleSubmit = () => {
-    console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
+    console.log(`Name: ${name}, Email: ${email}, Username: ${username}, Phone Number: ${phoneNumber}, City: ${city}, Country: ${country}`);
    
 
     navigation.navigate("UserProfile");
   };
 
 
-
-
-  const [isFocused, setIsFocused] = useState(false);
-
-  const handleFocus = () => {
-    setIsFocused(true);
+  const handleUsernameChange = (text) => {
+    setUsername(text);
+    setUsernameError(validateUsername(value));
   };
 
-  const handleBlur = () => {
-    setIsFocused(false);
+  const handleEmailChange = (text) => {
+    setEmail(text);
+    setEmailError(validateEmail(value));
   };
 
-  // const inputStyle = {
-  //   ...styles.input,
-  //   ...(isFocused && styles.inputFocused),
-  // };
+  const handleNameChange = (text) => {
+    setName(text);
+    setNameError(validateName(value));
+  };
 
-  const containerStyle = [
-    styles.container,
-    isFocused && styles.containerFocused,
-  ];
+  const handlePhoneNumberChange = (text) => {
+    setPhoneNumber(text);
+    setPhoneNumberError(validatePhoneNumber(value));
+  };
 
-  const inputStyle = [
-    styles.input,
-    isFocused && styles.inputFocused,
-  ];
+  const handleCityChange = (text) => {
+    setCity(text);
+    setCityError(validateCity(value));
+  };
+
+  const handleCountryChange = (text) => {
+    setCountry(text);
+    setCountryError(validateCountry(value));
+  };
+
+
+
 
   return (
     <View style={styles.container}>
-    <Text style={styles.text}>Edit Profile</Text>
-    <TextInput
-       placeholderTextColor=  {COLORS.darkGray}
-       style={inputStyle}
-      placeholder="Name"
-      value={name}
-      onChangeText={setName}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-    />
-    <Text style={styles.text}>Edit Profile</Text>
-    <TextInput
-       placeholderTextColor=  {COLORS.darkGray}
-       style={inputStyle}
-      placeholder="Email"
-      value={email}
-      onChangeText={setEmail}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-    />
-    <Text style={styles.text}>Edit Profile</Text>
-    <TextInput
-       placeholderTextColor=  {COLORS.darkGray}
-       style={inputStyle}
-      placeholder="Message"
-      multiline
-      numberOfLines={4}
-      value={message}
-      onChangeText={setMessage}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-    />
-    <Text style={styles.text}>Edit Profile</Text>
-      <TextInput
-         placeholderTextColor=  {COLORS.darkGray}
-         style={inputStyle}
-      placeholder="Message"
-      multiline
-      numberOfLines={4}
-      value={message}
-      onChangeText={setMessage}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-    />
-    <Text style={styles.text}>Edit Profile</Text>
-      <TextInput
-        placeholderTextColor=  {COLORS.darkGray}
-        style={inputStyle}
-      placeholder="Message"
-      multiline
-      numberOfLines={4}
-      value={message}
-      onChangeText={setMessage}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-    />
-    <Text style={styles.text}>Edit Profile</Text>
-      <TextInput
-     style={inputStyle}
-      placeholderTextColor=  {COLORS.darkGray}
-      placeholder="Message"
-      multiline
-      numberOfLines={4}
-      value={message}
-      onChangeText={setMessage}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-    />
-    
+    <Text style={styles.text}>Name</Text>
+      <InputTextUserForms 
+        placeholder="Name"
+        onChangeText={handleNameChange}
+        value={name}
+      />
+    <Text style={styles.text}>Username</Text>
+      <InputTextUserForms 
+        placeholder="Username"
+        onChangeText={handleUsernameChange}
+        value={username}
+      />
+    <Text style={styles.text}>Email</Text>
+      <InputTextUserForms 
+        placeholder="Email"
+        onChangeText={handleEmailChange}
+        value={email}
+      />
+    <Text style={styles.text}>Phone Number</Text>
+      <InputTextUserForms 
+        placeholder="Phone Number"
+        onChangeText={handlePhoneNumberChange}
+        value={phoneNumber}
+      />
+   
+    <Text style={styles.text}>City</Text>
+      <InputTextUserForms 
+        placeholder="City"
+        onChangeText={handleCityChange}
+        value={city}
+      />
+     <Text style={styles.text}>Country</Text>
+      <InputTextUserForms 
+        placeholder="Country"
+        onChangeText={handleCountryChange}
+        value={country}
+      />
+   
+   
     <RectangleButton
           fontSize={SIZES.medium}
           fontFamily={FONTS.bold}
