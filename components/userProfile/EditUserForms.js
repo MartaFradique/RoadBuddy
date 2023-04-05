@@ -21,63 +21,103 @@ const EditUserForms = () => {
     navigation.navigate("UserProfile");
   };
 
+
+
+
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+
+  // const inputStyle = {
+  //   ...styles.input,
+  //   ...(isFocused && styles.inputFocused),
+  // };
+
+  const containerStyle = [
+    styles.container,
+    isFocused && styles.containerFocused,
+  ];
+
+  const inputStyle = [
+    styles.input,
+    isFocused && styles.inputFocused,
+  ];
+
   return (
     <View style={styles.container}>
     <Text style={styles.text}>Edit Profile</Text>
     <TextInput
        placeholderTextColor=  {COLORS.darkGray}
-      style={styles.input}
+       style={inputStyle}
       placeholder="Name"
       value={name}
       onChangeText={setName}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
     />
     <Text style={styles.text}>Edit Profile</Text>
     <TextInput
        placeholderTextColor=  {COLORS.darkGray}
-      style={styles.input}
+       style={inputStyle}
       placeholder="Email"
       value={email}
       onChangeText={setEmail}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
     />
     <Text style={styles.text}>Edit Profile</Text>
     <TextInput
        placeholderTextColor=  {COLORS.darkGray}
-      style={styles.input}
+       style={inputStyle}
       placeholder="Message"
       multiline
       numberOfLines={4}
       value={message}
       onChangeText={setMessage}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
     />
     <Text style={styles.text}>Edit Profile</Text>
       <TextInput
          placeholderTextColor=  {COLORS.darkGray}
-      style={styles.input}
+         style={inputStyle}
       placeholder="Message"
       multiline
       numberOfLines={4}
       value={message}
       onChangeText={setMessage}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
     />
     <Text style={styles.text}>Edit Profile</Text>
       <TextInput
         placeholderTextColor=  {COLORS.darkGray}
-      style={styles.input}
+        style={inputStyle}
       placeholder="Message"
       multiline
       numberOfLines={4}
       value={message}
       onChangeText={setMessage}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
     />
     <Text style={styles.text}>Edit Profile</Text>
       <TextInput
-      style={styles.input}
+     style={inputStyle}
       placeholderTextColor=  {COLORS.darkGray}
       placeholder="Message"
       multiline
       numberOfLines={4}
       value={message}
       onChangeText={setMessage}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
     />
     
     <RectangleButton
@@ -114,7 +154,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       marginHorizontal:'10%',
     },
-    input: {
+    input2: {
       alignSelf: 'center',
       width: '100%',
       height: 40,
@@ -132,7 +172,26 @@ const styles = StyleSheet.create({
       marginTop: 2,
       marginBottom: 5
   
-    }
+    },
+    input: {
+      alignSelf: 'center',
+      width: '100%',
+      height: 40,
+      borderColor: COLORS.darkGray,
+      borderWidth: 1,
+      borderRadius: 8,
+      padding: 10,
+      marginBottom: 10,
+      outlineColor: 'transparent',
+      outlineStyle: 'none',
+    },
+    inputFocused: {
+
+      borderColor: COLORS.mainGreen,
+      borderBottomWidth: 4,
+      padding: 12,
+    },
+
   });
   
   
